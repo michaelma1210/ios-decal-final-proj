@@ -1,3 +1,14 @@
 # ios-decal-final-proj
-Markup :  # Heading 1 #
-Biddle
+# Biddle #
+## Authors ##
+## Purpose ##
+## Features ##
+## Control Flow ##
+## Implementation ##
+### Model ###
+### View ###
+### Controller ###
+
+
+
+
