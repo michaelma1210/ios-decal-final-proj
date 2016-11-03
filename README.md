@@ -1,5 +1,3 @@
-# ios-decal-final-proj
-
 # Biddle #
 
 ## Authors ##
