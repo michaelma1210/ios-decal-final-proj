@@ -52,10 +52,11 @@ Biddle is a social app designed to make spontaneous social activities easier by 
 * LoginViewController.swift
 * SwitchViewController.swift
 * ProfileViewController.swift
+* EditProfileViewController.swift
 * CreateEventViewController.swift
 * EventListTableViewController.swift
 * FriendsListTableViewController.swift
-
+* ScheduleViewController.swift
 
 
 
