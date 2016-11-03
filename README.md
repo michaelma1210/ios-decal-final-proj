@@ -1,12 +1,16 @@
 # ios-decal-final-proj
+
 # Biddle #
+
 ## Authors ##
 * David Choi
 * Yeshun Lin
 * Claudia Tse
 * Michael Ma
+
 ## Purpose ##
 Biddle is a social app designed to make spontaneous social activities easier by allowing friends to see each other’s current availability and view/create events.
+
 ## Features ##
 * Set your status as busy/idle
 * Default status will be set by your uploaded schedule
@@ -17,9 +21,13 @@ Biddle is a social app designed to make spontaneous social activities easier by 
 * Collect info and suggest activities
 
 ## Control Flow ##
+
 ## Implementation ##
+
 ### Model ###
+
 ### View ###
+
 ### Controller ###
 
 
