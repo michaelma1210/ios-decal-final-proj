@@ -41,7 +41,7 @@ Biddle is a social app designed to make spontaneous social activities easier by 
 * ProfileView
 * EditProfileView
 * CreateEventView
-* EventListTableView
+* EventsListTableView
 * FriendsListTableView
 * AddFriendView
 * ScheduleView
@@ -54,6 +54,7 @@ Biddle is a social app designed to make spontaneous social activities easier by 
 * CreateEventViewController.swift
 * EventListTableViewController.swift
 * FriendsListTableViewController.swift
+* AddFriendsViewController.swift
 * ScheduleViewController.swift
 
 
