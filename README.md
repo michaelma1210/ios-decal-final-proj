@@ -13,7 +13,7 @@ Biddle is a social app designed to make spontaneous social activities easier by 
 
 ## Features ##
 * Set your status as busy/idle
-* Default status will be set by your uploaded schedule
+  * Default status will be set by your uploaded schedule
 * Add short blurb on your profile say what you’re looking for. (ex. Study buddy, Food buddy, Gym buddy)
 * Add/accept friends and see their status
 * View/create events
