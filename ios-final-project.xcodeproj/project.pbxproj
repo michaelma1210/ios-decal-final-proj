@@ -17,6 +17,7 @@
 		2C63CF0E1DE29E810031C881 /* ios_final_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF0D1DE29E810031C881 /* ios_final_projectUITests.swift */; };
 		2C63CF1C1DE2A3650031C881 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */; };
 		2C63CF1E1DE2A4520031C881 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */; };
+		2C63CF201DE2A5DD0031C881 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2C63CF0F1DE29E810031C881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				2C63CEED1DE29E810031C881 /* HomeViewController.swift */,
 				2C63CEEF1DE29E810031C881 /* FriendsViewController.swift */,
 				2C63CEF11DE29E810031C881 /* Main.storyboard */,
+				2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */,
 				2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */,
 				2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */,
 				2C63CEF41DE29E810031C881 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C63CF201DE2A5DD0031C881 /* CreateAccountViewController.swift in Sources */,
 				2C63CEF01DE29E810031C881 /* FriendsViewController.swift in Sources */,
 				2C63CEEC1DE29E810031C881 /* AppDelegate.swift in Sources */,
 				2C63CF1C1DE2A3650031C881 /* ProfileViewController.swift in Sources */,
