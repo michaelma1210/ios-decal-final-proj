@@ -7,19 +7,35 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateAccountViewController: UIViewController {
+    
+    @IBOutlet var firstName: UITextField!
+    
+    @IBOutlet var lastName: UITextField!
+    
+    @IBOutlet var userName: UITextField!
+    
+    @IBOutlet var newPassword: UITextField!
+    
+    @IBOutlet var phoneNumber: UITextField!
+    
+    
+    let rootRef = FIRDatabase.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func CreateAccount(_ sender: Any) {
+        var stuff = firstName.text
+        print(stuff)
     }
+
     
 
     /*
