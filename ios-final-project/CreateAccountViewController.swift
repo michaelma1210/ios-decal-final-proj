@@ -26,14 +26,22 @@ class CreateAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     
     @IBAction func CreateAccount(_ sender: Any) {
-        var stuff = firstName.text
-        print(stuff)
+        let alias = userName.text
+        
+        let user = FIRDatabase.database().reference(withPath: "UserName").child(alias!)
+        rootRef.child("allUsers").child(alias!).setValue(0)
+        
+        user.child("FirstName").setValue(firstName.text!)
+        user.child("LastName").setValue(lastName.text!)
+        user.child("Password").setValue(newPassword.text!)
+        user.child("phoneNumber").setValue(phoneNumber.text!)
+        
     }
 
     
