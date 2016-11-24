@@ -60,27 +60,25 @@ class CreateAccountViewController: UIViewController {
     
     
     @IBAction func CreateAccount(_ sender: Any) {
+        let alias = userName.text! as String
+
         if checkCreateAccount() {
-            let alias = userName.text
-            
-            self.rootRef.child("allUsers").observe(.value, with: {FIRDataSnapshot in
-                for child in FIRDataSnapshot.children {
-                    let name = child
-                    print(name)
+            self.rootRef.child("allUsers").observe(.value, with: {(snapshot) in
+                
+                if snapshot.hasChild(alias) {
+
+                }
+                else {
+                    let user = FIRDatabase.database().reference(withPath: "UserName").child(alias)
+                    self.rootRef.child("allUsers").child(alias).setValue(0)
+                    
+                    user.child("FirstName").setValue(self.firstName.text!)
+                    user.child("LastName").setValue(self.lastName.text!)
+                    user.child("Password").setValue(self.newPassword.text!)
+                    user.child("phoneNumber").setValue(self.phoneNumber.text!)
                 }
             })
-            
-            let user = FIRDatabase.database().reference(withPath: "UserName").child(alias!)
-            rootRef.child("allUsers").child(alias!).setValue(0)
-            
-            user.child("FirstName").setValue(firstName.text!)
-            user.child("LastName").setValue(lastName.text!)
-            user.child("Password").setValue(newPassword.text!)
-            user.child("phoneNumber").setValue(phoneNumber.text!)
-        } else {
-            print("missing stuff")
         }
-        
     }
 
     
