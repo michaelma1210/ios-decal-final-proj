@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
+    
+    let rootRef = FIRDatabase.database().reference()
+    
 
+    @IBOutlet var userName: UITextField!
+
+    @IBOutlet var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +28,26 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func LogIn(_ sender: Any) {
+        let log = rootRef.child("UserName")
+        log.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(self.userName.text!) {
+                
+                let correctPassword : String!
+                correctPassword = snapshot.childSnapshot(forPath: self.userName.text!).childSnapshot(forPath: "Password").value as! String!
+
+                if correctPassword == self.password.text {
+                    print("That is the correct password")
+                } else {
+                    print("That is the incorrect password")
+                }
+               
+            }
+            
+        })
+        
+    }
 
 }
 
