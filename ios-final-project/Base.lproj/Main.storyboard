@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Home View Controller-->
+        <!--HomeViewController-->
         <scene sceneID="Wzp-IN-8fd">
             <objects>
-                <viewController id="dfL-Dw-lLF" customClass="HomeViewController" customModule="ios_final_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dfL-Dw-lLF" customClass="HomeViewController" customModule="ios_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="InF-9g-fdi"/>
                         <viewControllerLayoutGuide type="bottom" id="9Bj-2X-VWg"/>
@@ -203,7 +203,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <segue destination="OZ2-VF-FYC" kind="show" id="dhY-t0-n2p"/>
+                                    <segue destination="OZ2-VF-FYC" kind="show" identifier="" id="dhY-t0-n2p"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2OT-YP-9Xe">
@@ -229,6 +229,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" identifier="HomeViewController"/>
                         <constraints>
                             <constraint firstItem="wna-cR-OTJ" firstAttribute="top" secondItem="InF-9g-fdi" secondAttribute="bottom" constant="116" id="Fug-zv-OG2"/>
                             <constraint firstItem="wna-cR-OTJ" firstAttribute="centerX" secondItem="gYR-FT-eZB" secondAttribute="centerX" id="T1U-C5-KMO"/>
@@ -359,7 +360,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

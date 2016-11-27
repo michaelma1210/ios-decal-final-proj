@@ -39,6 +39,11 @@ class HomeViewController: UIViewController {
 
                 if correctPassword == self.password.text {
                     print("That is the correct password")
+                    
+                    let tabView = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
+                    
+                    self.present(tabView!, animated: true, completion: nil)
+                    
                 } else {
                     print("That is the incorrect password")
                 }
