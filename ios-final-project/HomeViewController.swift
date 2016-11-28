@@ -13,7 +13,8 @@ class HomeViewController: UIViewController {
     
     let rootRef = FIRDatabase.database().reference()
     
-
+    var check = false
+    
     @IBOutlet var userName: UITextField!
 
     @IBOutlet var password: UITextField!
@@ -27,8 +28,37 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mainTabBarController" {
+            var src = segue.destination as! mainTabBarController
+            src.userName = userName.text!
+            
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "mainTabBarController" {
+            
+            if check {
+                return true
+            }
+            return false
+
+        }
+        if identifier == "CreateAccountViewController" {
+            return true
+        }
+        
+        return false
+    }
 
     @IBAction func LogIn(_ sender: Any) {
+        
+        if (userName.text?.isEmpty)! || (password.text?.isEmpty)! {
+            return
+        }
+        
         let log = rootRef.child("UserName")
         log.observe(.value, with: { (snapshot) in
             
@@ -40,9 +70,8 @@ class HomeViewController: UIViewController {
                 if correctPassword == self.password.text {
                     print("That is the correct password")
                     
-                    let tabView = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
-                    
-                    self.present(tabView!, animated: true, completion: nil)
+                    self.check = true
+                    self.performSegue(withIdentifier: "mainTabBarController", sender: self)
                     
                 } else {
                     print("That is the incorrect password")
