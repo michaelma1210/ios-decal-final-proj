@@ -12,24 +12,33 @@ import Firebase
 class SwitchViewController: UIViewController {
     
     var userName = ""
+    var name = ""
+    var rootRef = FIRDatabase.database().reference()
     
-    
+    @IBOutlet var Status: UILabel!
     @IBOutlet var SwitchValue: UISwitch!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStatus()
         
-        print("this is it")
-        print(userName)
-        print("this is it")
-
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setStatus() {
+        let user = rootRef.child("UserName").child(userName)
+        user.observe(.value, with: { (snapshot) in
+            self.name = snapshot.childSnapshot(forPath: "FirstName").value as! String
+            
+            self.Status.text = "Hello " + self.name + "!"
+        
+        })
+        
     }
+    
+    
+
     
 
     /*

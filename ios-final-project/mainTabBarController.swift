@@ -15,24 +15,12 @@ class mainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(userName)
+        let switchVC = self.childViewControllers.first as! SwitchViewController
+        switchVC.userName = userName
         
         
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "First" {
-            var src = segue.destination as! SwitchViewController
-            src.userName = userName
-        }
-    }
-    
 
     /*
     // MARK: - Navigation
