@@ -75,8 +75,9 @@ class CreateAccountViewController: UIViewController {
                     user.child("FirstName").setValue(self.firstName.text!)
                     user.child("LastName").setValue(self.lastName.text!)
                     user.child("Password").setValue(self.newPassword.text!)
-                    user.child("phoneNumber").setValue(self.phoneNumber.text!)
-                                        
+                    user.child("PhoneNumber").setValue(self.phoneNumber.text!)
+                    user.child("Active").setValue(0)
+                    
                     let homeView = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                     self.present(homeView, animated: true, completion: nil)
                 }
