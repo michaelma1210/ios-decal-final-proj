@@ -49,21 +49,23 @@ class SwitchViewController: UIViewController {
     @IBAction func UpdateStatus(_ sender: Any) {
         let user = rootRef.child("UserName").child(userName)
         
-        user.observe(.value, with: { (snapshot) in
-            self.active = snapshot.childSnapshot(forPath: "Active").value as! Int
-        
-        })
-        if self.active == 0 {
-            self.Status.text = "Free Flowing"
-            user.child("Active").setValue(1)
-            
-        } else {
-            self.Status.text = "Busy Bee"
-            user.child("Active").setValue(0)
-            
-        }
+//        user.observe(.value, with: { (snapshot) in
+//            self.active = snapshot.childSnapshot(forPath: "Active").value as! Int
+//        
+//        })
+//        if self.active == 0 {
+//            self.Status.text = "Free Flowing"
+//            user.child("Active").setValue(1)
+//            
+//        } else {
+//            self.Status.text = "Busy Bee"
+//            user.child("Active").setValue(0)
+//            
+//        }
     }
     
+
+
     /*
     // MARK: - Navigation
 
