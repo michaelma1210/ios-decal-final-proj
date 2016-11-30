@@ -8,17 +8,33 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController {
-
+class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var tableView: UITableView!
+    
+    var friendList = ["Mark", "Luke", "John"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friendList.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = friendList[indexPath.row]
+        return cell
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
