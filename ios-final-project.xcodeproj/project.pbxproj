@@ -18,6 +18,8 @@
 		2C63CF1C1DE2A3650031C881 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */; };
 		2C63CF1E1DE2A4520031C881 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */; };
 		2C63CF201DE2A5DD0031C881 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */; };
+		2C97894B1DEE576600F0E6E9 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */; };
+		2C97894D1DEE577700F0E6E9 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */; };
 		385509DD717D31F43B7B16FD /* Pods_ios_final_projectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AAB9E5CD79E9744F466207 /* Pods_ios_final_projectUITests.framework */; };
 		3EF4A86D285D777D87542762 /* Pods_ios_final_projectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94400499F83B30B4903617DA /* Pods_ios_final_projectTests.framework */; };
 		D50D1B48C2B15495DA232B6E /* Pods_ios_final_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801A3FEADB3FA2DE92E00943 /* Pods_ios_final_project.framework */; };
@@ -62,6 +64,8 @@
 		2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
+		2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		4D48100D7B69A34D9CD2513C /* Pods-ios-final-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-final-project.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-final-project/Pods-ios-final-project.release.xcconfig"; sourceTree = "<group>"; };
 		801A3FEADB3FA2DE92E00943 /* Pods_ios_final_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_final_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF9955078D468ECB7CEC9DF /* Pods-ios-final-projectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-final-projectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-final-projectTests/Pods-ios-final-projectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				2C63CEED1DE29E810031C881 /* HomeViewController.swift */,
 				2C63CEEF1DE29E810031C881 /* FriendsViewController.swift */,
 				2C63CEF11DE29E810031C881 /* Main.storyboard */,
+				2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */,
+				2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */,
 				DE7DDC951DEBDC4400840448 /* mainTabBarController.swift */,
 				2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */,
 				2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */,
@@ -473,9 +479,11 @@
 				DE7DDC961DEBDC4400840448 /* mainTabBarController.swift in Sources */,
 				2C63CEEC1DE29E810031C881 /* AppDelegate.swift in Sources */,
 				2C63CF1C1DE2A3650031C881 /* ProfileViewController.swift in Sources */,
+				2C97894D1DEE577700F0E6E9 /* FindFriendsViewController.swift in Sources */,
 				2C63CEEE1DE29E810031C881 /* HomeViewController.swift in Sources */,
 				2C63CF1E1DE2A4520031C881 /* EventsViewController.swift in Sources */,
 				DE9D7AB01DEAE1300004FEBA /* SwitchViewController.swift in Sources */,
+				2C97894B1DEE576600F0E6E9 /* FriendRequestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
