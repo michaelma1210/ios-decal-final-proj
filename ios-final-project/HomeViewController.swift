@@ -70,6 +70,10 @@ class HomeViewController: UIViewController {
                 if correctPassword == self.password.text {
                     print("That is the correct password")
                     
+                    
+                    mainInstance.name = self.userName.text!
+//                    print(mainInstance.name)
+                    
                     self.check = true
                     self.performSegue(withIdentifier: "mainTabBarController", sender: self)
                     

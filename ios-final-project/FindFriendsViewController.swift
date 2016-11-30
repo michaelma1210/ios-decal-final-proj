@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class FindFriendsViewController: UIViewController {
 
+    @IBOutlet var userNameInput: UITextField!
+    
+    
+    var currentUser = mainInstance.name
+    
+    let rootRef = FIRDatabase.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +29,26 @@ class FindFriendsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func sendRequest(_ sender: Any) {
+        let allUsers = rootRef.child("UserName")
+
+        
+        if (self.userNameInput.text!.isEmpty == false) {
+
+            allUsers.observe(.value, with:
+                {(snapshot) in
+                    if snapshot.hasChild(self.userNameInput.text!) {
+                        let userFound = allUsers.child(self.userNameInput.text!)
+
+                        userFound.child("FriendRequest").child(self.currentUser).setValue(0)
+                    }
+                    
+            })
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+
+    }
 
     @IBAction func Cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

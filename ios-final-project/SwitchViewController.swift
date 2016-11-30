@@ -11,7 +11,7 @@ import Firebase
 
 class SwitchViewController: UIViewController {
     
-    var userName = ""
+    var currentUser = ""
     var name = ""
     var active = 0
     var rootRef = FIRDatabase.database().reference()
@@ -29,7 +29,7 @@ class SwitchViewController: UIViewController {
     }
     
     func setStatus() {
-        let user = rootRef.child("UserName").child(userName)
+        let user = rootRef.child("UserName").child(currentUser)
         user.observe(.value, with: { (snapshot) in
             self.name = snapshot.childSnapshot(forPath: "FirstName").value as! String
             self.active = snapshot.childSnapshot(forPath: "Active").value as! Int
@@ -47,7 +47,7 @@ class SwitchViewController: UIViewController {
 
     
     @IBAction func UpdateStatus(_ sender: Any) {
-        let user = rootRef.child("UserName").child(userName)
+        let user = rootRef.child("UserName").child(currentUser)
         
         user.observe(.value, with: { (snapshot) in
             self.active = snapshot.childSnapshot(forPath: "Active").value as! Int

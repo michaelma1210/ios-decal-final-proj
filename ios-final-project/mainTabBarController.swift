@@ -16,7 +16,8 @@ class mainTabBarController: UITabBarController {
         super.viewDidLoad()
         
         let switchVC = self.childViewControllers.first as! SwitchViewController
-        switchVC.userName = userName
+
+        switchVC.currentUser = userName
         
         
         // Do any additional setup after loading the view.

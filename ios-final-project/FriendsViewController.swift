@@ -9,6 +9,8 @@
 import UIKit
 
 class FriendsViewController: UIViewController {
+    
+    var currentUser = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
