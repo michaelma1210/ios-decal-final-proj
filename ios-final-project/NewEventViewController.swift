@@ -10,6 +10,14 @@ import UIKit
 
 class NewEventViewController: UIViewController {
 
+    //variables
+    @IBOutlet var eventTitle: UITextField!
+    @IBOutlet var eventDetails: UITextView!
+
+    @IBOutlet var eventPlace: UITextField!
+    
+    @IBOutlet var eventDateAndTime: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
