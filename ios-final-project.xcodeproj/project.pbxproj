@@ -18,6 +18,7 @@
 		2C63CF1C1DE2A3650031C881 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */; };
 		2C63CF1E1DE2A4520031C881 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */; };
 		2C63CF201DE2A5DD0031C881 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */; };
+		2C67764C1DF0349200AD3C6F /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */; };
 		2C97894B1DEE576600F0E6E9 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */; };
 		2C97894D1DEE577700F0E6E9 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */; };
 		2C97894F1DEE5FEF00F0E6E9 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894E1DEE5FEF00F0E6E9 /* global.swift */; };
@@ -65,6 +66,7 @@
 		2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
 		2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		2C97894E1DEE5FEF00F0E6E9 /* global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = global.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				2C63CEED1DE29E810031C881 /* HomeViewController.swift */,
 				2C63CEEF1DE29E810031C881 /* FriendsViewController.swift */,
 				2C63CEF11DE29E810031C881 /* Main.storyboard */,
+				2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */,
 				2C97894E1DEE5FEF00F0E6E9 /* global.swift */,
 				2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */,
 				2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */,
@@ -487,6 +490,7 @@
 				2C63CEEE1DE29E810031C881 /* HomeViewController.swift in Sources */,
 				2C63CF1E1DE2A4520031C881 /* EventsViewController.swift in Sources */,
 				DE9D7AB01DEAE1300004FEBA /* SwitchViewController.swift in Sources */,
+				2C67764C1DF0349200AD3C6F /* NewEventViewController.swift in Sources */,
 				2C97894B1DEE576600F0E6E9 /* FriendRequestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
