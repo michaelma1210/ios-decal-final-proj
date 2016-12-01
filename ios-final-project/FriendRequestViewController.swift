@@ -101,6 +101,7 @@ class FriendRequestViewController: UIViewController, UITableViewDataSource, UITa
             self.friendRequestList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
+            
         })
         
         return [notNowAction, acceptAction]
