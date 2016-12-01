@@ -16,11 +16,16 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
+    
+    @IBAction func LogOut(_ sender: Any) {
+        
+        let homeVC = self.storyboard?.instantiateInitialViewController() as! HomeViewController
+        
+        self.present(homeVC
+            , animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

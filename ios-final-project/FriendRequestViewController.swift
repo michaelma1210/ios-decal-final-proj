@@ -14,31 +14,39 @@ class FriendRequestViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet var tableView: UITableView!
     
     let currentUser = FIRDatabase.database().reference().child("UserName").child(mainInstance.name)
+    let allUsers = FIRDatabase.database().reference().child("UserName")
     var friendRequestList = [String]()
+    
+    
     
     
     override func viewDidLoad() {
         getFriendRequestList()
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     
     func getFriendRequestList() {
         
-        
-        let requestList = currentUser.child("FriendRequest")
-        
-        requestList.observe(.value, with: {(snapshot) in
+        if mainInstance.friendRequestCheck == 1 {
+            friendRequestList.removeAll()
             
-            for friend in snapshot.children {
-                let snapString = String(describing: friend)
-                let parsedString = self.parseUserName(username: snapString)
-                self.friendRequestList.append(parsedString)
-                print(parsedString)
+            let requestList = currentUser.child("FriendRequest")
+            
+            requestList.observe(.value, with: {(snapshot) in
                 
-            }
-        })
+                for friend in snapshot.children {
+                    let snapString = String(describing: friend)
+                    let parsedString = self.parseUserName(username: snapString)
+                    self.friendRequestList.append(parsedString)
+                    print(parsedString)
+                    
+                }
+            })
+        }
+        mainInstance.friendRequestCheck = 0
     }
     
     func parseUserName(username: String) -> String {
@@ -60,16 +68,19 @@ class FriendRequestViewController: UIViewController, UITableViewDataSource, UITa
         return user
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendRequestList.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return friendRequestList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
         cell.textLabel?.text = friendRequestList[indexPath.row]
         return cell
     }
@@ -78,18 +89,19 @@ class FriendRequestViewController: UIViewController, UITableViewDataSource, UITa
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            friendRequestList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-        
-    }
     
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let acceptAction = UITableViewRowAction.init(style: .normal, title: "Accept", handler: {(rowAction, indexPath) in
             print("Accept action has been pressed")
+            
+            
+            let addFriend = self.friendRequestList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.currentUser.child("FriendRequest").child(addFriend).removeValue()
+            
+            self.currentUser.child("Friends").child(addFriend).setValue(0)
+            self.allUsers.child(addFriend).child("Friends").child(self.currentUser.key).setValue(0)
             
         
         })
@@ -98,8 +110,12 @@ class FriendRequestViewController: UIViewController, UITableViewDataSource, UITa
         
         let notNowAction = UITableViewRowAction.init(style: .default, title: "Not now", handler: {(rowAction, indexPath) in
             print("Not now action has been pressed")
-            self.friendRequestList.remove(at: indexPath.row)
+            
+            let removedFriend = self.friendRequestList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            self.currentUser.child("FriendRequest").child(removedFriend).removeValue()
+            
             
             
         })

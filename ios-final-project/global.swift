@@ -10,8 +10,11 @@ import Foundation
 
 class Main {
     var name:String
-    init(name:String) {
+    var friendRequestCheck : Int
+    init(name:String, friendRequestCheck: Int) {
         self.name = name
+        self.friendRequestCheck = friendRequestCheck
+        
     }
 }
-var mainInstance = Main(name:"My Global Class")
+var mainInstance = Main(name: "My Global Class", friendRequestCheck: 1)
