@@ -1,4 +1,4 @@
-# Biddle #
+# Biddle/Switch/? (name pending) #
 
 ## Authors ##
 * David Choi
