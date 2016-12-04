@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class NewEventViewController: UIViewController {
 
     //variables
+    let allUsers = FIRDatabase.database().reference().child("UserName")
+    let currentUser = FIRDatabase.database().reference().child("UserName").child(mainInstance.name)
+    
     @IBOutlet var eventTitle: UITextField!
     @IBOutlet var eventDetails: UITextView!
 
@@ -33,6 +37,17 @@ class NewEventViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func createEvent(_ sender: Any) {
+        let event = currentUser.child("Events")
+        let eventTitle = event.child(self.eventTitle.text!)
+        eventTitle.child("Creator").setValue(mainInstance.name)
+        eventTitle.child("Details").setValue(eventDetails.text)
+        eventTitle.child("Place").setValue(eventPlace.text)
+        eventTitle.child("DateAndTime").setValue(eventDateAndTime.date.description)
+        
+        self.dismiss(animated: true, completion: nil)
+
+    }
     /*
     // MARK: - Navigation
 

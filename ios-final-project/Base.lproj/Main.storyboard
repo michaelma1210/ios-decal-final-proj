@@ -200,9 +200,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-4X-ay9">
-                                <rect key="frame" x="143" y="571" width="88" height="30"/>
+                                <rect key="frame" x="141" y="571" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send invites!"/>
+                                <state key="normal" title="Create Event!"/>
+                                <connections>
+                                    <action selector="createEvent:" destination="8o5-pd-p32" eventType="touchUpInside" id="DfY-xe-BDn"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coffee at Peet's" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00M-Xi-eSG">
                                 <rect key="frame" x="99" y="104" width="147" height="30"/>
@@ -261,10 +264,10 @@
             </objects>
             <point key="canvasLocation" x="1800.8" y="1930.8845577211396"/>
         </scene>
-        <!--View Controller-->
+        <!--Invite Friends To Event View Controller-->
         <scene sceneID="1jO-Bh-Nbd">
             <objects>
-                <viewController id="ORO-du-IOS" sceneMemberID="viewController">
+                <viewController id="ORO-du-IOS" customClass="InviteFriendsToEventViewController" customModule="ios_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0s5-9B-rPd"/>
                         <viewControllerLayoutGuide type="bottom" id="Sht-Ms-CFc"/>
@@ -278,7 +281,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Add Buddies" id="dEd-64-Ddp">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="m4s-yx-mg7"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="m4s-yx-mg7">
+                                            <connections>
+                                                <segue destination="8o5-pd-p32" kind="show" id="Zqi-Nu-p85"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -715,4 +722,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zqi-Nu-p85"/>
+    </inferredMetricsTieBreakers>
 </document>

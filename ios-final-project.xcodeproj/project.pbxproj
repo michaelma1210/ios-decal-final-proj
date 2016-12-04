@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4188231DF4183700509ED4 /* InviteFriendsToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4188221DF4183700509ED4 /* InviteFriendsToEventViewController.swift */; };
 		2C63CEEC1DE29E810031C881 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CEEB1DE29E810031C881 /* AppDelegate.swift */; };
 		2C63CEEE1DE29E810031C881 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CEED1DE29E810031C881 /* HomeViewController.swift */; };
 		2C63CEF01DE29E810031C881 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CEEF1DE29E810031C881 /* FriendsViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		01AAB9E5CD79E9744F466207 /* Pods_ios_final_projectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_final_projectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4188221DF4183700509ED4 /* InviteFriendsToEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsToEventViewController.swift; sourceTree = "<group>"; };
 		2C63CEE81DE29E810031C881 /* ios-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C63CEEB1DE29E810031C881 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C63CEED1DE29E810031C881 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				2C63CEED1DE29E810031C881 /* HomeViewController.swift */,
 				2C63CEEF1DE29E810031C881 /* FriendsViewController.swift */,
 				2C63CEF11DE29E810031C881 /* Main.storyboard */,
+				2C4188221DF4183700509ED4 /* InviteFriendsToEventViewController.swift */,
 				2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */,
 				2C97894E1DEE5FEF00F0E6E9 /* global.swift */,
 				2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */,
@@ -484,6 +487,7 @@
 				2C63CEF01DE29E810031C881 /* FriendsViewController.swift in Sources */,
 				DE7DDC961DEBDC4400840448 /* mainTabBarController.swift in Sources */,
 				2C63CEEC1DE29E810031C881 /* AppDelegate.swift in Sources */,
+				2C4188231DF4183700509ED4 /* InviteFriendsToEventViewController.swift in Sources */,
 				2C63CF1C1DE2A3650031C881 /* ProfileViewController.swift in Sources */,
 				2C97894F1DEE5FEF00F0E6E9 /* global.swift in Sources */,
 				2C97894D1DEE577700F0E6E9 /* FindFriendsViewController.swift in Sources */,
