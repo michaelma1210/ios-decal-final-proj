@@ -35,11 +35,6 @@ class SwitchViewController: UIViewController {
         
         statusButtonImageView?.clipsToBounds = true;
         
-        if self.active == 0 {
-            statusButtonImageView?.layer.borderColor = UIColor.red.cgColor;
-        } else {
-            statusButtonImageView?.layer.borderColor = UIColor.green.cgColor;
-        }
         statusButtonImageView?.layer.borderWidth = 15;
         // Do any additional setup after loading the view.
     }

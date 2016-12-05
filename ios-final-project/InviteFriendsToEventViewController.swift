@@ -14,12 +14,11 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
     @IBOutlet var tableView: UITableView!
     
     let currentUser = FIRDatabase.database().reference().child("UserName").child(mainInstance.name)
+    
     let allUsers = FIRDatabase.database().reference().child("UserName")
     var friendList = [String]()
     
     var friendArray = [String]()
-
-    
 
     override func viewDidLoad() {
         getFriendList()
