@@ -16,6 +16,8 @@ class SwitchViewController: UIViewController {
     var active = 0
     var rootRef = FIRDatabase.database().reference()
     
+    @IBOutlet weak var profileImage: UIButton!
+    @IBOutlet weak var statusButton: UIButton!
 
     @IBOutlet var Intro: UILabel!
     
@@ -25,10 +27,26 @@ class SwitchViewController: UIViewController {
         super.viewDidLoad()
         setStatus()
         
+        let statusButtonImage = UIImage(named: "profile_image.jpeg")
+        statusButton.setImage(statusButtonImage, for: UIControlState.normal)
+        let statusButtonImageView = self.statusButton.imageView;
+        
+        statusButtonImageView?.layer.cornerRadius = (self.statusButton.imageView?.frame.size.width)!/2
+        
+        statusButtonImageView?.clipsToBounds = true;
+        
+        if self.active == 0 {
+            statusButtonImageView?.layer.borderColor = UIColor.red.cgColor;
+        } else {
+            statusButtonImageView?.layer.borderColor = UIColor.green.cgColor;
+        }
+        statusButtonImageView?.layer.borderWidth = 15;
         // Do any additional setup after loading the view.
     }
     
     func setStatus() {
+        let statusButtonImageView = self.statusButton.imageView;
+        
         let user = rootRef.child("UserName").child(currentUser)
         user.observe(.value, with: { (snapshot) in
             self.name = snapshot.childSnapshot(forPath: "FirstName").value as! String
@@ -38,8 +56,10 @@ class SwitchViewController: UIViewController {
             
             if self.active == 0 {
                 self.Status.text = "Busy Bee"
+                statusButtonImageView?.layer.borderColor = UIColor.red.cgColor;
             } else {
                 self.Status.text = "Free Flowing"
+                statusButtonImageView?.layer.borderColor = UIColor.green.cgColor;
             }
         })
     }
