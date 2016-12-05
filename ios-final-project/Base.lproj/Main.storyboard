@@ -325,14 +325,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjO-aV-tTV">
-                                <rect key="frame" x="100" y="133" width="182" height="185"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="profile_image"/>
-                                <connections>
-                                    <action selector="changeProfileImage:" destination="npz-sU-UJq" eventType="touchUpInside" id="Uas-6B-agP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Edit Profile" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4MY-6Q-KNY">
                                 <rect key="frame" x="84" y="72" width="207.5" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -340,6 +332,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="Xtz-iq-7oi">
+                                <rect key="frame" x="96" y="139" width="182" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.019607843140000001" green="0.21960784310000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -349,7 +345,7 @@
                         <outlet property="lastName" destination="qvy-fG-mob" id="29r-G4-wmp"/>
                         <outlet property="newPassword" destination="bsM-Sq-GJy" id="vGB-vL-Rdn"/>
                         <outlet property="phoneNumber" destination="Jpv-LM-gTA" id="PQk-z6-xlc"/>
-                        <outlet property="profileImage" destination="RjO-aV-tTV" id="1XB-th-u1r"/>
+                        <outlet property="profileImageView" destination="Xtz-iq-7oi" id="g1R-gq-ZYt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3E-MF-wd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
