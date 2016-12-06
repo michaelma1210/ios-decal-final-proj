@@ -52,10 +52,21 @@ class HomeViewController: UIViewController {
         
         return false
     }
+    
+    
 
     @IBAction func LogIn(_ sender: Any) {
         
+        
+        
         if (userName.text?.isEmpty)! || (password.text?.isEmpty)! {
+            
+            let alert = UIAlertController(title: "User name or password is empty", message: "Please enter your credentials.", preferredStyle: UIAlertControllerStyle.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+            
             return
         }
         
@@ -78,9 +89,19 @@ class HomeViewController: UIViewController {
                     self.performSegue(withIdentifier: "mainTabBarController", sender: self)
                     
                 } else {
-                    print("That is the incorrect password")
+                    let alert = UIAlertController(title: "Invalid Login", message: "The username or password you have entered is incorrect.", preferredStyle: UIAlertControllerStyle.alert)
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
                 }
                
+            } else {
+                let alert = UIAlertController(title: "Invalid Login", message: "The username or password you have entered is incorrect.", preferredStyle: UIAlertControllerStyle.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
             }
             
         })
