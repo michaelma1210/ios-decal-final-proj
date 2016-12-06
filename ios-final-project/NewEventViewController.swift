@@ -51,7 +51,7 @@ class NewEventViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = friendList[indexPath.row]
-        return cel
+        return cell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

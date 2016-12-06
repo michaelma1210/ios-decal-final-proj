@@ -150,8 +150,8 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
     @IBAction func doneButton(_ sender: Any) {
         
         let selectedRows = tableView.indexPathsForSelectedRows
-        let selectedData = selectedRows?.map { friendArray[$0.row].ID }
-        
+//        let selectedData = selectedRows?.map { friendArray[$0.row].ID }
+//        
 
     }
 
