@@ -12,12 +12,17 @@ class mainTabBarController: UITabBarController {
     
     var userName = ""
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let switchVC = self.childViewControllers.first as! SwitchViewController
 
         switchVC.currentUser = userName
+
+
+
         
         
         // Do any additional setup after loading the view.
