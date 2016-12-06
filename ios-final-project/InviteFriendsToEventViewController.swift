@@ -59,6 +59,11 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
         mainInstance.friendRequestCheck = 0
     }
     
+    
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func parseUserName(username: String) -> String {
         var user = ""
         let currentUserName = username.characters
@@ -138,10 +143,15 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
         return true
     }
     
+    func getFriendsFromSelectedRows() {
+        
+    }
+    
     @IBAction func doneButton(_ sender: Any) {
         
         let selectedRows = tableView.indexPathsForSelectedRows
-//        let selectedData = selectedRows?.map { friendArray[$0.row].ID }
+        let selectedData = selectedRows?.map { friendArray[$0.row].ID }
+        
 
     }
 

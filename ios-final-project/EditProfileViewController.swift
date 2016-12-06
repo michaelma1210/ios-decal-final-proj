@@ -17,7 +17,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var newPassword: UITextField!
-    @IBOutlet weak var currentpassword: UITextField!
+    @IBOutlet weak var currentPassword: UITextField!
     
     var data: NSData?
     let rootRef = FIRDatabase.database().reference()
