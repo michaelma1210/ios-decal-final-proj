@@ -66,8 +66,17 @@ class CreateAccountViewController: UIViewController {
             self.rootRef.child("allUsers").observe(.value, with: {(snapshot) in
                 
                 if snapshot.hasChild(alias) {
-
+                    
+                        // create the alert
+                    let alert = UIAlertController(title: "Username already taken", message: "Please choose a new username.", preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        
+                        // show the alert
+                    self.present(alert, animated: true, completion: nil)
                 }
+                    
                 else {
                     let user = FIRDatabase.database().reference(withPath: "UserName").child(alias)
                     self.rootRef.child("allUsers").child(alias).setValue(0)
