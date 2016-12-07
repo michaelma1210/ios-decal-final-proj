@@ -20,8 +20,7 @@
 		2C63CF1E1DE2A4520031C881 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */; };
 		2C63CF201DE2A5DD0031C881 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */; };
 		2C67764C1DF0349200AD3C6F /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */; };
-		2C8B34DD1DF68EF900C80324 /* Colored v2 part 1 in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B34DC1DF68EF900C80324 /* Colored v2 part 1 */; };
-		2C8B34DF1DF68F0500C80324 /* Colored v2 part 2 in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B34DE1DF68F0500C80324 /* Colored v2 part 2 */; };
+		2C8B34DD1DF68EF900C80324 /* Colored v2 in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B34DC1DF68EF900C80324 /* Colored v2 */; };
 		2C97894B1DEE576600F0E6E9 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */; };
 		2C97894D1DEE577700F0E6E9 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */; };
 		2C97894F1DEE5FEF00F0E6E9 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894E1DEE5FEF00F0E6E9 /* global.swift */; };
@@ -72,8 +71,7 @@
 		2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
-		2C8B34DC1DF68EF900C80324 /* Colored v2 part 1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Colored v2 part 1"; sourceTree = "<group>"; };
-		2C8B34DE1DF68F0500C80324 /* Colored v2 part 2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Colored v2 part 2"; sourceTree = "<group>"; };
+		2C8B34DC1DF68EF900C80324 /* Colored v2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Colored v2"; sourceTree = "<group>"; };
 		2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
 		2C97894C1DEE577700F0E6E9 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		2C97894E1DEE5FEF00F0E6E9 /* global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = global.swift; sourceTree = "<group>"; };
@@ -160,8 +158,7 @@
 				2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */,
 				DE9D7AAF1DEAE1300004FEBA /* SwitchViewController.swift */,
 				2C63CEF41DE29E810031C881 /* Assets.xcassets */,
-				2C8B34DE1DF68F0500C80324 /* Colored v2 part 2 */,
-				2C8B34DC1DF68EF900C80324 /* Colored v2 part 1 */,
+				2C8B34DC1DF68EF900C80324 /* Colored v2 */,
 				2C63CEF61DE29E810031C881 /* LaunchScreen.storyboard */,
 				2C63CEF91DE29E810031C881 /* Info.plist */,
 				DEDF0D591DE2AC7400DEF405 /* GoogleService-Info.plist */,
@@ -326,11 +323,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C8B34DD1DF68EF900C80324 /* Colored v2 part 1 in Resources */,
+				2C8B34DD1DF68EF900C80324 /* Colored v2 in Resources */,
 				2C63CEF81DE29E810031C881 /* LaunchScreen.storyboard in Resources */,
 				DEDF0D5A1DE2AC7400DEF405 /* GoogleService-Info.plist in Resources */,
 				2C63CEF51DE29E810031C881 /* Assets.xcassets in Resources */,
-				2C8B34DF1DF68F0500C80324 /* Colored v2 part 2 in Resources */,
 				2C63CEF31DE29E810031C881 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,7 +48,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.01743166736" green="0.2178135081" blue="0.59422038610000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Switch" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Switch" image="Arkbuilding.png" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="Intro" destination="bZV-3f-AW5" id="AWx-bN-hBo"/>
                         <outlet property="Status" destination="j8L-29-h2T" id="YZ1-OR-WXE"/>
@@ -93,7 +93,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Events" id="U1P-pD-wBf"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="Sailing.png" id="U1P-pD-wBf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqx-Ok-Im4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,7 +213,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.019607843137254902" green="0.2196078431372549" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="L1Z-yF-Ih5"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Compasssafari.png" id="L1Z-yF-Ih5"/>
                     <connections>
                         <outlet property="firstName" destination="2lz-fJ-p7s" id="IXR-fX-WrR"/>
                         <outlet property="lastName" destination="a6b-hW-W36" id="6KN-mH-2mK"/>
@@ -640,7 +640,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1857559543" green="0.36494470140000002" blue="0.69344860409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="Connections.png" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="tableView" destination="1bN-Jr-oSX" id="VdY-r8-f5s"/>
                     </connections>
@@ -996,8 +996,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Arkbuilding.png" width="120" height="120"/>
+        <image name="Compasssafari.png" width="120" height="120"/>
+        <image name="Connections.png" width="120" height="120"/>
+        <image name="Sailing.png" width="120" height="120"/>
         <image name="profile_image" width="512" height="512"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
