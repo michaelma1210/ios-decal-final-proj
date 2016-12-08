@@ -27,7 +27,7 @@ class SwitchViewController: UIViewController {
         super.viewDidLoad()
         setStatus()
         
-        let statusButtonImage = UIImage(named: "profile_image.jpeg")
+        let statusButtonImage = UIImage(named: "rednose.png")
         statusButton.setImage(statusButtonImage, for: UIControlState.normal)
         let statusButtonImageView = self.statusButton.imageView;
         
