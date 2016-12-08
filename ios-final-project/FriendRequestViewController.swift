@@ -21,52 +21,14 @@ class FriendRequestViewController: UIViewController, UITableViewDataSource, UITa
     
     
     override func viewDidLoad() {
-        getFriendRequestList()
         super.viewDidLoad()
+        friendRequestList = mainInstance.friendRequestList
         
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     
-    func getFriendRequestList() {
-        
-        if mainInstance.friendRequestCheck == 1 {
-            friendRequestList.removeAll()
-            
-            let requestList = currentUser.child("FriendRequest")
-            
-            requestList.observe(.value, with: {(snapshot) in
-                
-                for friend in snapshot.children {
-                    let snapString = String(describing: friend)
-                    let parsedString = self.parseUserName(username: snapString)
-                    self.friendRequestList.append(parsedString)
-                    print(parsedString)
-                    
-                }
-            })
-        }
-        mainInstance.friendRequestCheck = 0
-    }
-    
-    func parseUserName(username: String) -> String {
-        var user = ""
-        let currentUserName = username.characters
-        
-        var checkParse = false
-        for character in currentUserName {
-            if checkParse {
-                if character == ")" {
-                    break
-                }
-                user += character.description
-            }
-            if character == "(" {
-                checkParse = true
-            }
-        }
-        return user
-    }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

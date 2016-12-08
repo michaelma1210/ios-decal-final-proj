@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import Firebase
 
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
     
-    var friendList = ["Mark", "Luke", "John"]
+    let currentUser = FIRDatabase.database().reference().child("UserName").child(mainInstance.name)
+    var friendList = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        friendList = mainInstance.friendList
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(friendList.count)
         return friendList.count
     }
     
