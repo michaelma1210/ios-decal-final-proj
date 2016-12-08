@@ -11,7 +11,7 @@ import Firebase
 
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     let currentUser = FIRDatabase.database().reference().child("UserName").child(mainInstance.name)
     let allUsers = FIRDatabase.database().reference().child("UserName")

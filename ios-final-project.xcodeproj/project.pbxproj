@@ -19,6 +19,7 @@
 		2C63CF1C1DE2A3650031C881 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */; };
 		2C63CF1E1DE2A4520031C881 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */; };
 		2C63CF201DE2A5DD0031C881 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */; };
+		2C6542A91DF93EA500CBE7AC /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6542A81DF93EA500CBE7AC /* EventDetailsViewController.swift */; };
 		2C67764C1DF0349200AD3C6F /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */; };
 		2C8B34DD1DF68EF900C80324 /* Colored v2 in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B34DC1DF68EF900C80324 /* Colored v2 */; };
 		2C97894B1DEE576600F0E6E9 /* FriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */; };
@@ -70,6 +71,7 @@
 		2C63CF1B1DE2A3650031C881 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2C63CF1D1DE2A4520031C881 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		2C63CF1F1DE2A5DD0031C881 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		2C6542A81DF93EA500CBE7AC /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		2C8B34DC1DF68EF900C80324 /* Colored v2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Colored v2"; sourceTree = "<group>"; };
 		2C97894A1DEE576600F0E6E9 /* FriendRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				2C63CEED1DE29E810031C881 /* HomeViewController.swift */,
 				2C63CEEF1DE29E810031C881 /* FriendsViewController.swift */,
 				2C63CEF11DE29E810031C881 /* Main.storyboard */,
+				2C6542A81DF93EA500CBE7AC /* EventDetailsViewController.swift */,
 				43F47D2B1DF52DF900DD9464 /* EditProfileViewController.swift */,
 				2C4188221DF4183700509ED4 /* InviteFriendsToEventViewController.swift */,
 				2C67764B1DF0349200AD3C6F /* NewEventViewController.swift */,
@@ -496,6 +499,7 @@
 				2C63CEEC1DE29E810031C881 /* AppDelegate.swift in Sources */,
 				2C4188231DF4183700509ED4 /* InviteFriendsToEventViewController.swift in Sources */,
 				2C63CF1C1DE2A3650031C881 /* ProfileViewController.swift in Sources */,
+				2C6542A91DF93EA500CBE7AC /* EventDetailsViewController.swift in Sources */,
 				43F47D2C1DF52DF900DD9464 /* EditProfileViewController.swift in Sources */,
 				2C97894F1DEE5FEF00F0E6E9 /* global.swift in Sources */,
 				2C97894D1DEE577700F0E6E9 /* FindFriendsViewController.swift in Sources */,

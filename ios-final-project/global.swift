@@ -14,40 +14,41 @@ class Main {
     var name:String
     var friendRequestCheck : Bool
     var friendCheck : Bool
-//    var eventCheck : Bool
+    var eventCheck : Bool
     var friendList = [String]()
-//    var eventList = [String]()
+    var eventList = [String]()
     var friendRequestList = [String]()
     var temp = 0
+    var currentEvent = ""
     var invitedBuddiesToSendBack = [String]()
     init(name:String) {
         self.name = name
         self.friendRequestCheck = true
         self.friendCheck = true
-//        self.eventCheck = true
+        self.eventCheck = true
         
     }
     
-//    func getEventList() {
-//        
-//        let eventListOfUser = FIRDatabase.database().reference().child("UserName").child(name).child("Events")
-//        
-//        if (self.eventCheck) {
-//            eventList.removeAll()
-//            
-//            eventListOfUser.observe(.value, with: {(snapshot) in
-//                
-//                for event in snapshot.children {
-//                    let snapString = String(describing: event)
-//                    let parsedString = self.parseUserName(username: snapString)
-//                    self.eventList.append(parsedString)
-//                    
-//                }
-//            })
-//        }
-//        self.eventCheck = false
-//    }
-//    
+    func getEventList() {
+        
+        let eventListOfUser = FIRDatabase.database().reference().child("UserName").child(name).child("Events")
+        
+        if (self.eventCheck) {
+            eventList.removeAll()
+            
+            eventListOfUser.observe(.value, with: {(snapshot) in
+                
+                for event in snapshot.children {
+                    let snapString = String(describing: event)
+                    let parsedString = self.parseUserName(username: snapString)
+                    self.eventList.append(parsedString)
+                    
+                }
+            })
+        }
+        self.eventCheck = false
+    }
+    
     
     
     
