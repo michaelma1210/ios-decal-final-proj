@@ -836,7 +836,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="mAj-yG-Eai">
+                                    <navigationItem id="mAj-yG-Eai">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="Dhq-Wj-slM">
                                             <connections>
                                                 <action selector="goBack:" destination="DfH-f5-2rS" id="j0v-3j-fEb"/>
