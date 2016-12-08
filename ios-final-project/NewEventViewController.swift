@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class NewEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class NewEventViewController: UIViewController {
 
     //variables
     let allUsers = FIRDatabase.database().reference().child("UserName")
@@ -17,7 +17,6 @@ class NewEventViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var friendList = [String]()
     
-    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet var eventTitle: UITextField!
     @IBOutlet var eventDetails: UITextView!
@@ -27,7 +26,10 @@ class NewEventViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var eventDateAndTime: UIDatePicker!
     
     override func viewDidLoad() {
+        friendList = mainInstance.invitedBuddiesToSendBack
+
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -35,27 +37,6 @@ class NewEventViewController: UIViewController, UITableViewDataSource, UITableVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return friendList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = friendList[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
     }
     
     
@@ -95,17 +76,61 @@ class NewEventViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func createEvent(_ sender: Any) {
         
         if checknotempty() {
+            let invitedFriends = currentUser.child("InvitedFriends")
+
             let event = currentUser.child("Events")
             let eventTitle = event.child(self.eventTitle.text!)
             eventTitle.child("Creator").setValue(mainInstance.name)
             eventTitle.child("Details").setValue(eventDetails.text)
             eventTitle.child("Place").setValue(eventPlace.text)
             eventTitle.child("DateAndTime").setValue(eventDateAndTime.date.description)
-        
+            
+            
+            invitedFriends.observe(.value, with:{(snapshot) in
+                for friend in snapshot.children {
+                    let snapString = String(describing: friend)
+                    let parsedString = self.parseUserName(username: snapString)
+                    let invitedBuddy = self.allUsers.child(parsedString)
+                    
+                    let event2 = invitedBuddy.child("Events")
+                    let eventTitle2 = event2.child(self.eventTitle.text!)
+                    eventTitle2.child("Creator").setValue(mainInstance.name)
+                    eventTitle2.child("Details").setValue(self.eventDetails.text)
+                    eventTitle2.child("Place").setValue(self.eventPlace.text)
+                    eventTitle2.child("DateAndTime").setValue(self.eventDateAndTime.date.description)
+                    
+                    print(parsedString)
+                    
+                }
+            })
+            
+            invitedFriends.removeValue()
+            
             self.dismiss(animated: true, completion: nil)
+            
+            
             
         }
 
+    }
+    
+    func parseUserName(username: String) -> String {
+        var user = ""
+        let currentUserName = username.characters
+        
+        var checkParse = false
+        for character in currentUserName {
+            if checkParse {
+                if character == ")" {
+                    break
+                }
+                user += character.description
+            }
+            if character == "(" {
+                checkParse = true
+            }
+        }
+        return user
     }
     /*
     // MARK: - Navigation

@@ -51,10 +51,10 @@ class SwitchViewController: UIViewController {
             
             if self.active == 0 {
                 self.Status.text = "Busy Bee"
-                statusButtonImageView?.layer.borderColor = UIColor.red.cgColor;
+                statusButtonImageView?.layer.borderColor = UIColor(red: 1.0, green:0.0, blue: 0.0, alpha: 0.5).cgColor;
             } else {
                 self.Status.text = "Free Flowing"
-                statusButtonImageView?.layer.borderColor = UIColor.green.cgColor;
+                statusButtonImageView?.layer.borderColor = UIColor(red: 0.0, green:1.0, blue: 0.0, alpha: 0.5).cgColor;
             }
         })
     }

@@ -14,7 +14,9 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var tableView: UITableView!
     
     let currentUser = FIRDatabase.database().reference().child("UserName").child(mainInstance.name)
+    let allUsers = FIRDatabase.database().reference().child("UserName")
     var friendList = [String]()
+    var status = [Int]()
     
     
     override func viewDidLoad() {
@@ -25,7 +27,6 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(friendList.count)
         return friendList.count
     }
     
@@ -36,10 +37,20 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = friendList[indexPath.row]
+        
+        let friend = allUsers.child(friendList[indexPath.row])
+        friend.observe(.value, with: {(snapshot) in
+            let temp = snapshot.childSnapshot(forPath: "Active").value as! Int
+            mainInstance.temp = temp
+            print(mainInstance.temp)
+            
+            if mainInstance.temp == 1 {
+                cell.backgroundColor = UIColor(red: 0.0, green:1.0, blue: 0.0, alpha: 0.3)
+            } else {
+                cell.backgroundColor = UIColor(red: 1.0, green:0.0, blue: 0.0, alpha: 0.3)
+            }
+        })
         return cell
     }
-
-
-
 }
 

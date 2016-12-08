@@ -18,16 +18,24 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
     let allUsers = FIRDatabase.database().reference().child("UserName")
     var friendList = [String]()
     
-    var friendArray = [String]()
+    var invitedBuddiesToSendBack = [String]()
+    
+//    var friendArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsMultipleSelection = true
-
+        friendList = mainInstance.friendList
 
         // Do any additional setup after loading the view.
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewEventVC" {
+            
+        }
+    }
     
 
     override func didReceiveMemoryWarning() {
@@ -35,27 +43,6 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
-    
-//    func getFriendList() {
-//        
-//        if mainInstance.friendRequestCheck == true {
-//            friendList.removeAll()
-//            
-//            let requestList = currentUser.child("Friends")
-//            
-//            requestList.observe(.value, with: {(snapshot) in
-//                
-//                for friend in snapshot.children {
-//                    let snapString = String(describing: friend)
-//                    let parsedString = self.parseUserName(username: snapString)
-//                    self.friendList.append(parsedString)
-//                    print(parsedString)
-//                    
-//                }
-//            })
-//        }
-//        mainInstance.friendRequestCheck = 0
-//    }
     
     
     @IBAction func cancel(_ sender: Any) {
@@ -101,6 +88,20 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
         let rowIsSelected = selectedIndexPaths != nil && selectedIndexPaths!.contains(indexPath)
         cell.accessoryType = rowIsSelected ? .checkmark : .none
         // cell.accessoryView.hidden = !rowIsSelected // if using a custom image
+        
+        let friend = allUsers.child(friendList[indexPath.row])
+        friend.observe(.value, with: {(snapshot) in
+            let temp = snapshot.childSnapshot(forPath: "Active").value as! Int
+            mainInstance.temp = temp
+            print(mainInstance.temp)
+            
+            if mainInstance.temp == 1 {
+                cell.backgroundColor = UIColor(red: 0.0, green:1.0, blue: 0.0, alpha: 0.3)
+            } else {
+                cell.backgroundColor = UIColor(red: 1.0, green:0.0, blue: 0.0, alpha: 0.3)
+            }
+        })
+
 
         return cell
     }
@@ -118,25 +119,6 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
         // cell.accessoryView.hidden = true  // if using a custom image
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt: IndexPath) {
-//        let cell = tableView.cellForRow(at: didSelectRowAt)
-//        if cell?.accessoryType == UITableViewCellAccessoryType.none {
-//            cell?.accessoryType = .checkmark
-//            taskAL[didSelectRowAt.row].checked = true
-//            
-//            let timeStamp = NSDate()
-//            
-//            taskAL[didSelectRowAt.row].time = timeStamp
-//            
-//            
-//        } else {
-//            cell?.accessoryType = .none
-//            taskAL[didSelectRowAt.row].checked = false
-//        }
-//        tableView.deselectRow(at: didSelectRowAt, animated: true)
-//        
-//    }
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -148,7 +130,14 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
     @IBAction func doneButton(_ sender: Any) {
         
         let selectedRows = tableView.indexPathsForSelectedRows
-//        let selectedData = selectedRows?.map { friendArray[$0.row].ID }
+        for value in selectedRows! {
+            let name = friendList[value.row]
+            allUsers.child(mainInstance.name).child("InvitedFriends").child(name).setValue(0)
+            
+//            mainInstance.invitedBuddiesToSendBack.append(temp)
+        }
+               
+        dismiss(animated: true, completion: nil)
 //        
 
     }
