@@ -85,8 +85,8 @@ class HomeViewController: UIViewController {
                     mainInstance.name = self.userName.text!
                     mainInstance.friendRequestCheck = true
                     mainInstance.friendCheck = true
-                    mainInstance.getList(listType: "Friends")
-                    mainInstance.getList(listType: "FriendRequest")
+                    mainInstance.getFriendList()
+                    mainInstance.getFriendRequestList()
                     
                     self.check = true
                     self.performSegue(withIdentifier: "mainTabBarController", sender: self)
