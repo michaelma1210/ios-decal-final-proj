@@ -81,8 +81,7 @@ class HomeViewController: UIViewController {
                 if correctPassword == self.password.text {
                     print("That is the correct password")
                     
-                    
-                    mainInstance.name = self.userName.text!
+                    mainInstance = Main(name: self.userName.text!)
                     mainInstance.friendRequestCheck = true
                     mainInstance.friendCheck = true
                     mainInstance.eventCheck = true
