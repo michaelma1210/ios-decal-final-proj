@@ -21,8 +21,6 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
     var friendArray = [String]()
 
     override func viewDidLoad() {
-        getFriendList()
-
         super.viewDidLoad()
         tableView.allowsMultipleSelection = true
 
@@ -38,26 +36,26 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
     }
     
     
-    func getFriendList() {
-        
-        if mainInstance.friendRequestCheck == 1 {
-            friendList.removeAll()
-            
-            let requestList = currentUser.child("Friends")
-            
-            requestList.observe(.value, with: {(snapshot) in
-                
-                for friend in snapshot.children {
-                    let snapString = String(describing: friend)
-                    let parsedString = self.parseUserName(username: snapString)
-                    self.friendList.append(parsedString)
-                    print(parsedString)
-                    
-                }
-            })
-        }
-        mainInstance.friendRequestCheck = 0
-    }
+//    func getFriendList() {
+//        
+//        if mainInstance.friendRequestCheck == true {
+//            friendList.removeAll()
+//            
+//            let requestList = currentUser.child("Friends")
+//            
+//            requestList.observe(.value, with: {(snapshot) in
+//                
+//                for friend in snapshot.children {
+//                    let snapString = String(describing: friend)
+//                    let parsedString = self.parseUserName(username: snapString)
+//                    self.friendList.append(parsedString)
+//                    print(parsedString)
+//                    
+//                }
+//            })
+//        }
+//        mainInstance.friendRequestCheck = 0
+//    }
     
     
     @IBAction func cancel(_ sender: Any) {
