@@ -17,6 +17,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.eventList = mainInstance.eventList
+        eventList = mainInstance.eventList
         
 
         // Do any additional setup after loading the view.

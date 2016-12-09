@@ -87,6 +87,7 @@ class NewEventViewController: UIViewController {
             
             //extra
             mainInstance.eventList.append(self.eventTitle.text!)
+
             
             invitedFriends.observe(.value, with:{(snapshot) in
                 for friend in snapshot.children {
