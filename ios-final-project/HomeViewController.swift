@@ -81,11 +81,14 @@ class HomeViewController: UIViewController {
                 if correctPassword == self.password.text {
                     print("That is the correct password")
                     
+                    mainInstance = Main(name: self.userName.text!)
+                    mainInstance.friendRequestCheck = true
+                    mainInstance.friendCheck = true
+                    mainInstance.eventCheck = true
+                    mainInstance.getFriendList()
+                    mainInstance.getFriendRequestList()
+                    mainInstance.getEventList()
                     
-                    mainInstance.name = self.userName.text!
-                    mainInstance.friendRequestCheck = 1
-                    mainInstance.getList(listType: "Friends")
-                    mainInstance.getList(listType: "FriendRequest")
                     self.check = true
                     self.performSegue(withIdentifier: "mainTabBarController", sender: self)
                     

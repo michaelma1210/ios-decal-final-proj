@@ -65,6 +65,8 @@ class FriendRequestViewController: UIViewController, UITableViewDataSource, UITa
             self.currentUser.child("Friends").child(addFriend).setValue(0)
             self.allUsers.child(addFriend).child("Friends").child(self.currentUser.key).setValue(0)
             
+            mainInstance.friendList.append(addFriend)
+            
         
         })
         
@@ -77,8 +79,6 @@ class FriendRequestViewController: UIViewController, UITableViewDataSource, UITa
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             self.currentUser.child("FriendRequest").child(removedFriend).removeValue()
-            
-            
             
         })
         

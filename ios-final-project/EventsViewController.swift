@@ -8,13 +8,57 @@
 
 import UIKit
 
-class EventsViewController: UIViewController {
+class EventsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+    
+    var eventList = [String]()
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.eventList = mainInstance.eventList
+        
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.eventList = mainInstance.eventList
+        self.tableView.reloadData()
+
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return eventList.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = eventList[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let eventTitle = eventList[indexPath.row]
+        
+        let eventDetail = self.storyboard?.instantiateViewController(withIdentifier: "EventDetail") as! EventDetailsViewController
+        
+        eventDetail.eventTemp = eventTitle
+                
+        self.present(eventDetail, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
 
 
 

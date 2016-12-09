@@ -12,34 +12,87 @@ import Firebase
 class Main {
     
     var name:String
-    var friendRequestCheck : Int
+    var friendRequestCheck : Bool
+    var friendCheck : Bool
+    var eventCheck : Bool
     var friendList = [String]()
+    var eventList = [String]()
     var friendRequestList = [String]()
-    init(name:String, friendRequestCheck: Int) {
+    var temp = 0
+    var currentEvent = ""
+    var invitedBuddiesToSendBack = [String]()
+    init(name:String) {
         self.name = name
-        self.friendRequestCheck = friendRequestCheck
+        self.friendRequestCheck = true
+        self.friendCheck = true
+        self.eventCheck = true
         
     }
     
-    func getList(listType: String) {
+    func getEventList() {
         
-        let friendListOfUser = FIRDatabase.database().reference().child("UserName").child(name).child(listType)
+        let eventListOfUser = FIRDatabase.database().reference().child("UserName").child(name).child("Events")
         
+        if (self.eventCheck) {
+            eventList.removeAll()
+            
+            eventListOfUser.observe(.value, with: {(snapshot) in
+                
+                for event in snapshot.children {
+                    let snapString = String(describing: event)
+                    let parsedString = self.parseUserName(username: snapString)
+                    self.eventList.append(parsedString)
+                    
+                }
+            })
+        }
+        self.eventCheck = false
+    }
+    
+    
+    
+    
+    func getFriendList() {
+        
+        let friendListOfUser = FIRDatabase.database().reference().child("UserName").child(name).child("Friends")
+        
+        if (self.friendCheck) {
+            friendList.removeAll()
+            
         friendListOfUser.observe(.value, with: {(snapshot) in
             
             for friend in snapshot.children {
                 let snapString = String(describing: friend)
                 let parsedString = self.parseUserName(username: snapString)
-                if listType == "Friends" {
-                    self.friendList.append(parsedString)
-                }
-                if listType == "FriendRequest" {
-                    self.friendRequestList.append(parsedString)
-                }
+                self.friendList.append(parsedString)
+                print(self.friendList.count)
                 print(parsedString)
                 
             }
         })
+        }
+        self.friendCheck = false
+    }
+
+    func getFriendRequestList() {
+        
+        let friendListOfUser = FIRDatabase.database().reference().child("UserName").child(name).child("FriendRequest")
+        
+        if (self.friendRequestCheck) {
+            friendRequestList.removeAll()
+            
+            friendListOfUser.observe(.value, with: {(snapshot) in
+                
+                for friend in snapshot.children {
+                    let snapString = String(describing: friend)
+                    let parsedString = self.parseUserName(username: snapString)
+                    self.friendRequestList.append(parsedString)
+                    print(parsedString)
+                    
+                }
+            })
+        }
+        self.friendRequestCheck = false
     }
     
     func parseUserName(username: String) -> String {
@@ -61,4 +114,4 @@ class Main {
         return user
     }
 }
-var mainInstance = Main(name: "My Global Class", friendRequestCheck: 1)
+var mainInstance = Main(name: "My Global Class")
