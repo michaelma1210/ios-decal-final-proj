@@ -137,16 +137,6 @@ class InviteFriendsToEventViewController: UIViewController, UITableViewDataSourc
                             }
         }
         dismiss(animated: true, completion: nil)
-        for value in selectedRows! {
-            let name = friendList[value.row]
-            allUsers.child(mainInstance.name).child("InvitedFriends").child(name).setValue(0)
-            
-//            mainInstance.invitedBuddiesToSendBack.append(temp)
-        }
-               
-        dismiss(animated: true, completion: nil)
-//        
-
     }
 
     /*
